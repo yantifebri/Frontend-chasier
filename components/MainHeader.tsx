@@ -1,11 +1,25 @@
-import React from "react"
-import Link from 'next/link'
+"use client";
+import React, { useContext } from "react";
+// import Link from 'next/link';
+import {FaBars} from  "react-icons/fa";
+import { MenuContext } from "@/context/MenuContext";
+
 
 const MainHeader = () => {
+ const {toggle} = useContext(MenuContext);
+
     return (
-        <div className="bg-blue-500">
-            Main Header
-            <ul>
+        <div className="bg-white flex justify-between items-center px-4 h-12 mb-4">
+          <div>Yanti Febriyanti</div>
+          <div onClick={toggle}>
+            <FaBars className="cursor-pointer"/>
+          </div>
+        </div>
+    );
+}
+
+export default MainHeader;
+  {/* <ul>
               <Link href="/">
                 <li>home</li>
               </Link>
@@ -15,9 +29,4 @@ const MainHeader = () => {
               <Link href="/product">
                 <li>product</li>
               </Link>
-            </ul>
-        </div>
-    );
-}
-
-export default MainHeader;
+            </ul> */}
